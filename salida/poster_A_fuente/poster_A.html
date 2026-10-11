@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Poster A — Cómo comunicarte con la IA</title>
+<!-- VISUAL SYSTEM
+ Canvas 1080x1920 (9:16). Safe margin 72px (6.7%). Spacing rhythm: multiples of 8.
+ Colors: cream #EEE6DA (bg), ink #141414, signal red #C8202A. 
+ Type: Display = Anton; Editorial = Playfair Display Italic; Text = Barlow (semi-bold/medium). No Inter/Arial.
+ Scale: L1 headline 132px | L1b figures 112px | L2 sub 40px | L3 body 34px | L4 meta 30px (uppercase, tracked).
+ Composition: layered/overlap (red IA behind subject) + grid band at bottom. Subject fades into the band, never hard-cut.
+-->
+<style>
+@font-face{font-family:Anton;src:url(Anton-Regular.ttf)}
+@font-face{font-family:PF;src:url(PlayfairItalic.ttf);font-weight:400 900;font-style:italic}
+@font-face{font-family:Barlow;src:url(Barlow-Medium.ttf);font-weight:500}
+@font-face{font-family:Barlow;src:url(Barlow-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Barlow;src:url(Barlow-Bold.ttf);font-weight:700}
+:root{--cream:#EEE6DA;--ink:#141414;--red:#C8202A;--m:72px;--u:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;background:var(--cream);overflow:hidden}
+#poster{position:relative;width:1080px;height:1920px;background:var(--cream);overflow:hidden;font-family:Barlow,sans-serif;color:var(--ink)}
+.grain{position:absolute;inset:0;z-index:20;pointer-events:none;opacity:.10;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.top{position:absolute;left:var(--m);right:var(--m);top:72px;display:flex;justify-content:space-between;align-items:center;
+ font-weight:600;font-size:30px;letter-spacing:.16em;text-transform:uppercase;z-index:10}
+.rule{position:absolute;left:var(--m);right:var(--m);top:128px;height:2px;background:var(--ink);opacity:.85;z-index:10}
+.title{width:max-content;position:absolute;left:var(--m);top:152px;z-index:10;font-family:PF,serif;font-style:italic;font-weight:500;font-size:112px;line-height:1.04;letter-spacing:-.01em}
+.title .l2{color:var(--red);display:block;margin-left:8px}
+.ia{position:absolute;left:var(--m);right:var(--m);top:606px;display:flex;justify-content:space-between;z-index:2;
+ font-family:Anton;font-size:900px;line-height:1;color:var(--red);height:760px}
+.ia span{display:block;line-height:.92}
+.band{position:absolute;left:0;right:0;top:1360px;bottom:0;background:var(--ink);z-index:3}
+.subject{position:absolute;z-index:5;left:296px;top:392px;height:1120px;width:auto;
+ -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 90%,transparent 98%);mask-image:linear-gradient(to bottom,#000 0,#000 90%,transparent 98%)}
+.info{position:absolute;left:var(--m);right:var(--m);top:1500px;z-index:10;color:#fff}
+.row1{display:flex;justify-content:space-between;align-items:flex-end}
+.col .lab{font-weight:600;font-size:30px;letter-spacing:.16em;text-transform:uppercase;color:#B9B2A8;margin-bottom:8px}
+.col .num{font-family:Anton;font-size:112px;line-height:1;letter-spacing:.01em}
+.col .sub{font-weight:600;font-size:34px;letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
+.col.r{text-align:right}
+.red{color:#F0525B}
+.div{height:2px;background:#fff;opacity:.35;margin:24px 0}
+.row2{display:flex;justify-content:space-between;align-items:center}
+.venue .v1{font-weight:700;font-size:38px;letter-spacing:.06em;text-transform:uppercase}
+.venue .v2{font-weight:500;font-size:32px;letter-spacing:.06em;text-transform:uppercase;color:#B9B2A8;margin-top:4px}
+.cta{display:flex;align-items:center;gap:16px;background:#fff;color:var(--ink);height:88px;padding:0 40px;border-radius:44px;font-weight:700;font-size:36px;letter-spacing:.08em;text-transform:uppercase}
+.cta i{width:16px;height:16px;border-radius:50%;background:var(--red);display:block}
+</style></head>
+<body><div id="poster">
+  <div class="top"><span data-t>Taller · 3 días</span><span data-t>21 — 23 Oct</span></div>
+  <div class="rule"></div>
+  <h1 class="title" data-t>Cómo comunicarte<span class="l2">con la</span></h1>
+  <div class="ia" aria-hidden="true"><span>I</span><span>A</span></div>
+  <div class="band"></div>
+  <img class="subject" src="cut.png" alt="Byron">
+  <div class="info">
+    <div class="row1">
+      <div class="col"><div class="lab" data-t>Fechas</div><div class="num" data-t>21·22·23</div><div class="sub red" data-t>Octubre</div></div>
+      <div class="col r"><div class="lab" data-t>Inversión</div><div class="num" data-t>$65</div><div class="sub" data-t>Por persona · 3 días</div></div>
+    </div>
+    <div class="div"></div>
+    <div class="row2">
+      <div class="venue"><div class="v1" data-t>Auditorio Fenatrape</div><div class="v2" data-t>Incluye certificado</div></div>
+      <div class="cta" data-t><i></i>Cupos limitados</div>
+    </div>
+  </div>
+  <div class="grain"></div>
+  <pre id="report" style="display:none"></pre>
+</div>
+<script>
+document.fonts.ready.then(()=>{
+  const P=document.getElementById('poster').getBoundingClientRect(), M=72, out={issues:[],items:[]};
+  const els=[...document.querySelectorAll('[data-t]')];
+  const rects=els.map(e=>{const r=e.getBoundingClientRect();const fs=parseFloat(getComputedStyle(e).fontSize);return {t:e.textContent.trim().slice(0,28),x0:Math.round(r.left),x1:Math.round(r.right),y0:Math.round(r.top),y1:Math.round(r.bottom),fs}});
+  rects.forEach(r=>{out.items.push(r);
+    if(r.x0<M-1||r.x1>1080-M+1) out.issues.push('MARGIN-X '+JSON.stringify(r));
+    if(r.y0<M-1||r.y1>1920-M+1) out.issues.push('MARGIN-Y '+JSON.stringify(r));
+    if(r.fs<30) out.issues.push('TEXT<30px '+JSON.stringify(r));});
+  for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];
+    if(a.x0<b.x1&&b.x0<a.x1&&a.y0<b.y1&&b.y0<a.y1&&!(a.t.startsWith('Cómo compr')||b.t.startsWith('Cómo compr'))) out.issues.push('OVERLAP '+a.t+' x '+b.t);}
+  const s=document.querySelector('.subject').getBoundingClientRect(); out.subject={x0:Math.round(s.left),x1:Math.round(s.right),y0:Math.round(s.top),y1:Math.round(s.bottom)};
+  const ia=[...document.querySelectorAll('.ia span')].map(e=>{const r=e.getBoundingClientRect();return [Math.round(r.left),Math.round(r.right),Math.round(r.top),Math.round(r.bottom)]}); out.ia=ia;
+  document.getElementById('report').textContent=JSON.stringify(out);
+});
+</script></body></html>

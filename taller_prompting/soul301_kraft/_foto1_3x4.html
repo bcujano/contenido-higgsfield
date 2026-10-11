@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Taller Prompting 3x4</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Caveat:wght@700&display=block" rel="stylesheet">
+<style>
+/* SISTEMA VISUAL
+   Lienzo 1080x1440 · margen seguro 56px.
+   Color: kraft oscuro (fondo) · crema (texto sobre foto) · naranja (acento) · papel kraft claro + tinta (datos).
+   Tipo: Archivo 900 display / 800 sub / 600-700 cuerpo · Caveat 700 notas a mano.
+   Escala: titular 108 · héroe 260 · sub 44-76 · cuerpo/etiquetas >=30. Ritmo 8/16px.
+   Composición: foco en Byron (derecha) + columna informativa (izquierda) + hoja de datos abajo. */
+:root{
+  --bg:#6f3a1b; --bg2:#43210f;
+  --cream:#f8ead6; --orange:#ff8a3d; --orange-d:#cf4f1a;
+  --paper:#e8c99f; --ink:#22150c; --ink2:#4a3020;
+  --m:56px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1440px;overflow:hidden}
+body{font-family:'Archivo',sans-serif;color:var(--cream);position:relative;
+  background:radial-gradient(110% 65% at 62% 45%, #8a4a22 0%, var(--bg) 55%, var(--bg2) 100%);}
+.grain{position:absolute;inset:0;z-index:9;pointer-events:none;opacity:.2;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");}
+.layer{position:absolute;left:431px;top:298px;width:676px;height:901px;background-size:100% 100%}
+.photo{z-index:1;background-image:url('v_13b11378.png');
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 120px,#000 calc(100% - 300px),transparent 100%),
+                     linear-gradient(to right,transparent 28px,#000 234px,#000 calc(100% - 60px),transparent 100%);
+  -webkit-mask-composite:source-in;mask-composite:intersect;}
+.cut{z-index:3;background-image:url('cut_13b11378.png')}
+.a{position:absolute}
+.z2{z-index:2}.z4{z-index:4}
+
+.eyebrow{left:var(--m);top:52px;font-weight:800;font-size:30px;letter-spacing:.16em;color:var(--orange)}
+.badge{right:var(--m);top:42px;font-weight:900;font-size:30px;letter-spacing:.1em;color:var(--ink);
+  background:var(--orange);padding:10px 20px;border-radius:4px;transform:rotate(2deg)}
+.headline{left:var(--m);top:100px;font-weight:900;font-size:86px;line-height:.94;letter-spacing:-.02em;
+  text-transform:uppercase;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+.headline em{font-style:normal;color:var(--orange)}
+.note{left:560px;top:262px;font-family:'Caveat',cursive;font-weight:700;font-size:50px;line-height:1;color:var(--orange);transform:rotate(-5deg)}
+.note svg{display:block}
+
+.col{left:var(--m);top:356px;width:570px;display:flex;flex-direction:column}
+.herorow{display:flex;align-items:center;gap:22px}
+.hero{font-weight:900;font-size:160px;line-height:.74;letter-spacing:-.06em;color:var(--orange);text-shadow:0 10px 30px rgba(0,0,0,.35);margin-left:-8px}
+.herolabel{font-weight:900;font-size:36px;line-height:.98;text-transform:uppercase;margin-top:0;text-shadow:0 3px 16px rgba(0,0,0,.45)}
+.herolabel span{color:var(--orange)}
+.rule{height:3px;background:var(--orange);width:120px;margin:22px 0 16px}
+.who{font-weight:900;font-size:38px;line-height:1}
+.who small{display:block;font-size:30px;letter-spacing:.16em;color:var(--orange);font-weight:800;margin-bottom:8px}
+.ai{color:var(--orange);font-weight:800}
+.role{font-size:30px;font-weight:600;line-height:1.2;margin-top:10px;color:#f1dcc2}
+.creds{margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:30px;font-weight:700;line-height:1.15}
+.creds div{display:flex;gap:14px;align-items:flex-start}
+.creds i{flex:0 0 12px;height:12px;margin-top:11px;background:var(--orange);transform:rotate(45deg)}
+
+.postit{left:844px;top:124px;width:176px;height:160px;background:#f6d77a;color:var(--ink);
+  transform:rotate(6deg);box-shadow:4px 12px 20px rgba(0,0,0,.4);padding:20px 16px;
+  font-family:'Caveat',cursive;font-weight:700;font-size:38px;line-height:1;text-align:center;display:flex;align-items:center;justify-content:center}
+.postit:before{content:"";position:absolute;top:-14px;left:48px;width:80px;height:26px;background:rgba(255,248,225,.55);transform:rotate(-4deg)}
+
+.panel{position:absolute;z-index:5;left:32px;right:32px;bottom:32px;background:var(--paper);color:var(--ink);
+  border-radius:6px;box-shadow:0 -8px 40px rgba(0,0,0,.4);padding:24px 32px 26px;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.2),rgba(0,0,0,.05));display:flex;flex-direction:column;gap:16px}
+.row{display:flex;align-items:flex-end}
+.date{font-weight:900;font-size:84px;line-height:.9;letter-spacing:-.02em;white-space:nowrap}
+.date small{display:block;font-size:30px;letter-spacing:.14em;font-weight:800;color:var(--orange-d);margin-bottom:10px}
+.when{margin-left:auto;text-align:right;font-size:30px;line-height:1.2;font-weight:600}
+.when b{display:block;font-size:40px;font-weight:900}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tk{border:3px solid var(--ink);border-radius:6px;padding:10px 16px 12px;line-height:1.05}
+.tk .n{font-weight:900;font-size:30px;letter-spacing:.04em}
+.tk .d{font-weight:600;font-size:30px}
+.tk .p{font-weight:900;font-size:52px;letter-spacing:-.02em;margin-top:6px;line-height:1}
+.tk.on{background:var(--orange-d);border-color:var(--orange-d);color:#fff6ea}
+.foot{display:flex;align-items:center;gap:16px}
+.ph{border:3px dashed rgba(34,21,12,.45);border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:30px;font-weight:700;color:rgba(34,21,12,.6);text-align:center;line-height:1.05}
+.logo{width:150px;height:76px;font-size:21px}
+.wa{flex:1;height:76px}
+.qr{width:90px;height:90px}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="layer photo"></div>
+<div class="layer cut"></div>
+
+<div class="a z4 eyebrow">TALLER DE PROMPTING</div>
+<div class="a z4 badge">CUPO LIMITADO</div>
+<div class="a z4 headline">Aprende a<br>comunicarte<br>con la <em>IA</em></div>
+<div class="a z4 note">3 días · 9 horas
+  <svg width="250" height="16" viewBox="0 0 290 18"><path d="M4 12 C 80 2, 180 4, 286 9" stroke="#ff8a3d" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+
+<div class="a z2 col">
+  <div class="herorow"><div class="hero">4+</div>
+  <div class="herolabel">Años de<br>experiencia<br><span>en IA</span></div></div>
+  <div class="rule"></div>
+  <div class="who"><small>SPEAKER</small>BYRON CUJANO</div>
+  <div class="role">Fundador &amp; CEO de <b class="ai">AI</b>uda<br>Fundador de 321 Soluciones Inmobiliarias</div>
+  <div class="creds">
+    <div><i></i>Sistemas operativos IA para empresas</div>
+    <div><i></i>30+ empresas ayudadas</div>
+    <div><i></i>Especialista en IA inmobiliaria</div>
+    <div><i></i>Experto en sistemas IA comerciales</div>
+    <div><i></i>Agentes IA de atención al cliente</div>
+  </div>
+</div>
+<div class="a z2 postit">Incluye certificado ✓</div>
+
+<div class="panel">
+  <div class="row">
+    <div class="date"><small>OCTUBRE 2026</small>21 · 22 · 23</div>
+    <div class="when"><b>2PM – 5PM</b>Auditorio Fenatrape</div>
+  </div>
+  <div class="prices">
+    <div class="tk on"><div class="n">LANZAMIENTO</div><div class="d">1 – 5 oct</div><div class="p">$65</div></div>
+    <div class="tk"><div class="n">PREVENTA</div><div class="d">5 – 15 oct</div><div class="p">$75</div></div>
+    <div class="tk"><div class="n">NORMAL</div><div class="d">15 – 21 oct</div><div class="p">$120</div></div>
+  </div>
+  <div class="foot">
+    <div class="ph logo">LOGO<br>AIUDA</div>
+    <div class="ph logo">LOGO<br>321</div>
+    <div class="ph logo">LOGO<br>FENATRAPE</div>
+    <div class="ph wa">WhatsApp<br>+593 ·· ··· ····</div>
+    <div class="ph qr">QR</div>
+  </div>
+</div>
+</body>
+</html>

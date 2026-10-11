@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Poster B — Cómo comunicarte con la IA (collage naranja)</title>
+<!-- VISUAL SYSTEM
+ Canvas 1080x1440 (3:4). Safe margin 56px. Spacing multiples of 8.
+ Colors: orange (from plate), cream swoosh, ink #0E0E0E, white. Subject: burgundy blazer.
+ Type: Display Anton (condensed, like reference) | Text Barlow 600/700 | Handwriting Caveat.
+ Scale: headline 88 | date 104 | name 52 | labels/body >= 30px (legibility rule).
+ Composition: layered collage over photographic plate; text columns left-top and right; subject centered-left; stickers float.
+-->
+<style>
+@font-face{font-family:Anton;src:url(Anton-Regular.ttf)}
+@font-face{font-family:Barlow;src:url(Barlow-Medium.ttf);font-weight:500}
+@font-face{font-family:Barlow;src:url(Barlow-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Barlow;src:url(Barlow-Bold.ttf);font-weight:700}
+@font-face{font-family:Caveat;src:url(Caveat.ttf);font-weight:400 700}
+:root{--ink:#0E0E0E;--m:56px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1440px;overflow:hidden;background:#E8731A}
+#p{position:relative;width:1080px;height:1440px;overflow:hidden;font-family:Barlow,sans-serif;color:var(--ink);background:url(plate_1080.jpg) center/100% 100% no-repeat}
+.abs{position:absolute}
+.subject{position:absolute;z-index:5;left:262px;top:300px;height:1020px;width:auto;filter:drop-shadow(26px 30px 22px rgba(60,20,0,.38))}
+/* title */
+.title{left:var(--m);top:64px;z-index:8;font-family:Anton;font-size:82px;line-height:1.0;text-transform:uppercase;letter-spacing:.005em}
+.title .w{display:inline-block;background:var(--ink);color:#fff;padding:2px 14px 0 12px;margin-top:6px;transform:rotate(-1.5deg)}
+.sub{left:var(--m);top:340px;z-index:8;font-weight:600;font-size:32px;line-height:1.25}
+.sub::after{content:"";display:block;width:64px;height:4px;background:var(--ink);margin-top:12px}
+.hand{z-index:8;font-family:Caveat;font-weight:700;color:var(--ink);line-height:1}
+.h1{left:314px;top:60px;font-size:62px;transform:rotate(-5deg)}
+.h1 u{display:block;height:5px;background:var(--ink);border-radius:6px;width:190px;margin:0 0 0 30px;transform:rotate(-2deg)}
+/* stickers */
+.st{z-index:9;background:var(--ink);color:#fff;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;padding:12px 22px 12px 18px;border-radius:12px 12px 12px 0;display:flex;align-items:center;gap:14px}
+.st.a{left:var(--m);top:470px;transform:rotate(-3deg)}
+.st.b{left:var(--m);top:590px;background:#fff;color:var(--ink);transform:rotate(2deg);border:3px solid var(--ink)}
+.st i{display:block;width:34px;height:34px;border-radius:50%;background:#E8731A;border:3px solid #fff}
+.st.b i{background:var(--ink);border-color:var(--ink)}
+/* notebook + note handwriting */
+.nb{z-index:6;left:36px;top:1150px;width:190px;transform:rotate(-7deg);font-family:Caveat;font-weight:700;font-size:44px;line-height:1.02;color:#2a1a0a;text-align:left}
+.sn{z-index:6;left:268px;top:1214px;width:92px;transform:rotate(-4deg);font-family:Caveat;font-weight:700;font-size:32px;line-height:1;color:#2a1a0a;text-align:center}
+/* right column */
+.spk{right:var(--m);top:424px;width:296px;z-index:9;text-align:right}
+.spk .tag{display:inline-block;background:var(--ink);color:#fff;font-weight:700;font-size:30px;letter-spacing:.14em;padding:6px 16px;border-radius:6px;text-transform:uppercase}
+.spk .nm{font-family:Anton;font-size:56px;line-height:1.0;margin-top:14px;text-transform:uppercase}
+.spk .rl{font-weight:600;font-size:30px;line-height:1.18;margin-top:10px}
+.date{right:var(--m);top:930px;width:340px;z-index:9;text-align:right;font-family:Anton;text-transform:uppercase;line-height:.95}
+.date .d1{font-size:100px;color:var(--ink)} .date .d2{font-size:100px;color:#fff}
+.line{right:var(--m);width:180px;top:1148px;height:5px;background:var(--ink);z-index:9}
+.price{right:var(--m);top:1166px;z-index:9;text-align:right;font-weight:700;font-size:34px;line-height:1.15;text-transform:uppercase;letter-spacing:.02em}
+.venue{right:var(--m);top:1244px;z-index:9;display:flex;align-items:center;gap:16px;font-weight:700;font-size:30px;line-height:1.1;text-transform:uppercase;text-align:right}
+.venue img{width:72px;height:72px;border-radius:50%;display:block}
+.cta{right:var(--m);top:1330px;z-index:9;background:var(--ink);color:#fff;font-weight:700;font-size:30px;letter-spacing:.04em;text-transform:uppercase;padding:12px 22px;border:3px solid var(--ink);display:flex;align-items:center;gap:12px;height:56px}
+.cta svg{width:26px;height:26px}
+.grain{position:absolute;inset:0;z-index:20;pointer-events:none;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+</style></head>
+<body><div id="p">
+  <h1 class="abs title" data-t>Cómo<br>comunicarte<br><span class="w">con la IA</span></h1>
+  <div class="abs sub" data-t>Prompts. Claridad.<br>Resultados.</div>
+  <div class="abs hand h1" data-t>Háblale a la IA<u></u></div>
+  <img class="subject" src="cut.png" alt="Byron">
+  <div class="abs st a" data-t><i></i><span>3 días<br>9 horas</span></div>
+  <div class="abs st b" data-t><i></i><span>Incluye<br>certificado</span></div>
+  <div class="abs nb" data-t>Plan<br>Prompt<br>Repeat</div>
+  <div class="abs sn" data-t>¡Cupos!</div>
+  <div class="abs spk"><span class="tag" data-t>Speaker</span><div class="nm" data-t>Byron<br>Cujano CBR</div><div class="rl" data-t>Fundador Director<br>de AiUDA<br>Director Ejecutivo de<br>321 Soluciones<br>Inmobiliarias</div></div>
+  <div class="abs date"><div class="d1" data-t>21·22·23</div><div class="d2" data-t>Octubre</div></div>
+  <div class="abs line"></div>
+  <div class="abs price" data-t>2 PM · $65 por persona</div>
+  <div class="abs venue"><span data-t>Auditorio<br>Fenatrape</span><img src="logo_fenatrape.png" alt=""></div>
+  <div class="abs cta" data-t><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="square"><path d="M6 18L18 6M9 6h9v9"/></svg>Reserva por WhatsApp</div>
+  <div class="grain"></div>
+  <pre id="report" style="display:none"></pre>
+</div>
+<script>
+document.fonts.ready.then(()=>{
+  const M=48,out={issues:[],items:[]};
+  const els=[...document.querySelectorAll('[data-t]')];
+  const rs=els.map(e=>{const r=e.getBoundingClientRect();return{t:e.textContent.trim().slice(0,24).replace(/\s+/g,' '),x0:Math.round(r.left),x1:Math.round(r.right),y0:Math.round(r.top),y1:Math.round(r.bottom),fs:parseFloat(getComputedStyle(e).fontSize)}});
+  rs.forEach(r=>{out.items.push(r);
+   if(r.x0<M||r.x1>1080-M)out.issues.push('MARGIN-X '+JSON.stringify(r));
+   if(r.y0<M||r.y1>1440-M)out.issues.push('MARGIN-Y '+JSON.stringify(r));
+   if(r.fs<30)out.issues.push('TEXT<30 '+JSON.stringify(r));});
+  for(let i=0;i<rs.length;i++)for(let j=i+1;j<rs.length;j++){const a=rs[i],b=rs[j];
+   if(a.x0<b.x1&&b.x0<a.x1&&a.y0<b.y1&&b.y0<a.y1)out.issues.push('OVERLAP '+a.t+' x '+b.t);}
+  const s=document.querySelector('.subject').getBoundingClientRect();out.subject=[Math.round(s.left),Math.round(s.right),Math.round(s.top),Math.round(s.bottom)];
+  document.getElementById('report').textContent=JSON.stringify(out);});
+</script></body></html>

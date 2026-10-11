@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Taller Prompting ref 3x4</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Caveat:wght@600;700&display=block" rel="stylesheet">
+<style>
+/* SISTEMA VISUAL (estilo referencia: vista cenital sobre papel kraft claro)
+   Lienzo 1080x1440 · margen 56px.
+   Color: kraft claro (piso) · tinta oscura (texto) · naranja quemado (acento) · amarillo post-it.
+   Tipo: Archivo 900 estrecho (titulares/listas) · Caveat 700 (notas a mano).
+   Escala: héroe 300 · display 80 · titular 54 · cuerpo/etiquetas >=30 · manuscrito 40-56.
+   Composición: punto focal central (Byron) con notas satélite a izquierda/derecha y bloque héroe abajo. */
+:root{--paper:#d3bd99;--paper2:#b89d76;--edge:#7d6547;--ink:#211a14;--ink2:#3b3027;--or:#b5461b;--post:#f3d677;--m:56px}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1440px;overflow:hidden}
+body{position:relative;font-family:'Archivo',sans-serif;color:var(--ink);
+  background:radial-gradient(85% 70% at 52% 46%, #ddc8a6 0%, var(--paper) 45%, var(--paper2) 78%, var(--edge) 100%)}
+.grain{position:absolute;inset:0;z-index:20;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .33 0 0 0 .55 0'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>")}
+.fibers{position:absolute;inset:0;z-index:0;opacity:.25;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .6 0'/></filter><rect width='600' height='600' filter='url(%23f)'/></svg>")}
+.blinds{position:absolute;left:-200px;top:-260px;width:1100px;height:1300px;z-index:1;transform:rotate(-32deg);filter:blur(7px);
+  background:repeating-linear-gradient(0deg, rgba(255,240,215,.0) 0 46px, rgba(70,48,25,.20) 46px 78px);
+  -webkit-mask-image:radial-gradient(60% 55% at 35% 40%, #000 30%, transparent 75%)}
+.light{position:absolute;inset:0;z-index:1;background:radial-gradient(55% 45% at 22% 18%, rgba(255,236,200,.35), transparent 70%)}
+.a{position:absolute;z-index:5}
+.byron{position:absolute;z-index:6;left:156px;top:0px;width:768px;height:1024px;filter:drop-shadow(16px 18px 14px rgba(45,28,12,.45)) saturate(.92)}
+.byron i{position:absolute;inset:0;background:url('cut_13b11378.png') 0 0/100% 100% no-repeat;clip-path:none}
+.contact{position:absolute;z-index:5;left:389px;top:712px;width:218px;height:46px;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(30,18,8,.55), transparent);filter:blur(6px)}
+.n{font-stretch:78%}
+.hand{font-family:'Caveat',cursive;font-weight:700;color:var(--ink2);line-height:1}
+.post{background:var(--post);box-shadow:3px 10px 16px rgba(40,25,10,.35);display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:'Caveat',cursive;font-weight:700;color:var(--ink);line-height:1.02}
+.post:before{content:"";position:absolute;top:-12px;left:50%;margin-left:-38px;width:76px;height:24px;background:rgba(255,250,232,.6);transform:rotate(-3deg)}
+svg.sq{display:block}
+
+/* izquierda */
+.title{left:var(--m);top:64px;width:300px;font-weight:900;font-size:52px;line-height:.92;text-transform:uppercase;font-stretch:76%}
+.title em{font-style:normal;color:var(--or)}
+.note1{left:var(--m);top:272px;font-size:46px;transform:rotate(-6deg)}
+.post1{left:118px;top:408px;width:178px;height:166px;font-size:38px;transform:rotate(-5deg)}
+.cert{left:var(--m);top:610px;font-weight:900;font-size:36px;line-height:1.02;text-transform:uppercase;font-stretch:80%}
+.cert .ring{position:relative;display:inline-block}
+.cert .ring svg{position:absolute;left:-14px;top:-8px}
+.note2{left:84px;top:722px;font-size:42px;transform:rotate(-4deg)}
+
+/* derecha */
+.name{right:var(--m);top:70px;width:300px;font-size:56px;transform:rotate(-3deg);text-align:left}
+.role{right:var(--m);top:162px;width:296px;font-weight:700;font-size:30px;line-height:1.12;font-stretch:80%;color:var(--ink2)}
+.role b{color:var(--or)}
+.list{right:var(--m);top:330px;width:300px;display:flex;flex-direction:column;gap:16px}
+.list div{display:flex;gap:14px;align-items:flex-start;font-weight:800;font-size:30px;line-height:1.05;text-transform:uppercase;font-stretch:76%}
+.list svg{flex:0 0 36px;margin-top:-2px}
+.post2{right:70px;top:{P2Y}px;width:178px;height:150px;font-size:40px;transform:rotate(5deg)}
+
+/* héroe */
+.hero{left:0;right:0;top:680px;text-align:center;z-index:4}
+.hero .num{font-weight:900;font-size:260px;line-height:.74;letter-spacing:-.04em;color:var(--or);opacity:.92;mix-blend-mode:multiply}
+.hero .lab{font-weight:900;font-size:66px;line-height:.9;text-transform:uppercase;font-stretch:80%;margin-top:12px;letter-spacing:-.01em}
+.hero .lab span{color:var(--or)}
+
+/* objetos-información */
+.ticket{left:40px;top:852px;width:280px;background:#efe3cc;transform:rotate(-4deg);box-shadow:4px 12px 18px rgba(40,25,10,.4);
+  border-radius:8px;padding:16px 18px;z-index:7}
+.ticket h4{font-weight:900;font-size:30px;font-stretch:78%;letter-spacing:.06em;color:var(--or);border-bottom:2px dashed rgba(33,26,20,.35);padding-bottom:8px;margin-bottom:8px}
+.tier{display:flex;align-items:baseline;justify-content:space-between;gap:10px;line-height:1}
+.tier + .tier{margin-top:10px}
+.tier .l{font-weight:800;font-size:28px;font-stretch:68%;text-transform:uppercase}
+.tier .l small{display:block;font-size:26px;font-weight:600;text-transform:none;margin-top:2px;color:var(--ink2)}
+.tier .p{font-weight:900;font-size:40px;font-stretch:85%}
+.tier.on .p,.tier.on .l{color:var(--or)}
+.phone{right:44px;top:846px;width:210px;height:270px;background:#16120f;border-radius:30px;padding:12px;transform:rotate(7deg);
+  box-shadow:6px 14px 22px rgba(30,18,8,.5);z-index:7}
+.screen{width:100%;height:100%;background:#f4efe6;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px}
+.screen .wa{font-weight:900;font-size:30px;font-stretch:80%;color:#128c4a}
+.screen .num{font-weight:700;font-size:26px;font-stretch:80%}
+.qr{width:120px;height:120px;border:3px dashed rgba(33,26,20,.45);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:rgba(33,26,20,.55)}
+
+/* fila inferior */
+.info{left:var(--m);right:var(--m);top:1166px;display:grid;grid-template-columns:1.15fr 1fr 1fr;align-items:center}
+.info > div{display:flex;gap:14px;align-items:center;padding:0 18px;border-left:2px solid rgba(33,26,20,.3)}
+.info > div:first-child{border-left:0;padding-left:0}
+.info b{display:block;font-weight:900;font-size:38px;font-stretch:80%;line-height:1}
+.info span{display:block;font-weight:700;font-size:30px;font-stretch:80%;line-height:1.1;color:var(--ink2)}
+.cta{left:var(--m);right:var(--m);top:0px;text-align:center;font-weight:900;font-size:40px;font-stretch:80%;text-transform:uppercase}
+.cta span{color:var(--or)}
+.logos{left:var(--m);right:var(--m);top:1300px;display:flex;gap:16px;justify-content:center}
+.lg{width:200px;height:64px;border:2px dashed rgba(33,26,20,.4);border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:20px;letter-spacing:.04em;color:rgba(33,26,20,.5);text-align:center}
+</style>
+</head>
+<body>
+<div class="fibers"></div>
+<div class="light"></div>
+<div class="blinds"></div>
+
+<!-- IZQUIERDA -->
+<div class="a title">Aprende a comunicarte con la <em>IA</em>
+  <svg class="sq" width="230" height="20" viewBox="0 0 230 20" style="margin-top:8px"><path d="M3 14 C 60 4, 150 2, 226 8" stroke="#b5461b" stroke-width="7" fill="none" stroke-linecap="round"/></svg></div>
+<div class="a hand note1">Taller de<br>&nbsp;&nbsp;Prompting
+  <svg class="sq" width="170" height="26" viewBox="0 0 170 26"><path d="M6 18 C 50 8, 110 6, 150 10 M110 20 l20 -6 l-14 10 l22 -4" stroke="#3b3027" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+<div class="a post post1">Pregunta.<br>Prueba.<br>Mejora.<br>Repite. ✦</div>
+<div class="a cert">Incluye<br><span class="ring">certificado.
+  <svg width="250" height="58" viewBox="0 0 250 58"><ellipse cx="125" cy="29" rx="120" ry="24" stroke="#b5461b" stroke-width="3" fill="none" transform="rotate(-3 125 29)"/></svg></span></div>
+<div class="a hand note2">3 días · 9 horas.<br>Cupo limitado.
+  <svg class="sq" width="200" height="22" viewBox="0 0 200 22"><path d="M4 14 C 60 6, 130 6, 196 10" stroke="#3b3027" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+
+<!-- DERECHA -->
+<div class="a hand name">Byron Cujano
+  <svg class="sq" width="290" height="16" viewBox="0 0 290 16"><path d="M2 12 C 90 2, 200 2, 288 6" stroke="#3b3027" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+<div class="a role">Fundador &amp; CEO de <b>AI</b>uda<br>Fundador de 321 Soluciones Inmobiliarias</div>
+<div class="a list">
+  <div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.8"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/><rect x="9.5" y="9.5" width="5" height="5"/></svg>Sistemas operativos IA para empresas</div>
+  <div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>30+ empresas ayudadas</div>
+  <div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.8"><path d="M3 11l9-7 9 7M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>Especialista en IA inmobiliaria</div>
+  <div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>Experto en sistemas IA comerciales</div>
+  <div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke-width="3" stroke-linecap="round"/></svg>Agentes IA de atención al cliente</div>
+</div>
+
+<!-- HÉROE -->
+<div class="a hero"><div class="num">4+</div><div class="lab">Años de<br>experiencia<br><span>en IA</span></div></div>
+
+<!-- OBJETOS -->
+<div class="a ticket">
+  <h4>INVERSIÓN</h4>
+  <div class="tier on"><div class="l">Lanzamiento<small>1 – 5 oct</small></div><div class="p">$65</div></div>
+  <div class="tier"><div class="l">Preventa<small>5 – 15 oct</small></div><div class="p">$75</div></div>
+  <div class="tier"><div class="l">Normal<small>15 – 21 oct</small></div><div class="p">$120</div></div>
+</div>
+<div class="a phone"><div class="screen"><div class="wa">WhatsApp</div><div class="num">+593 ·· ··· ····</div><div class="qr">QR</div></div></div>
+
+<div class="byron"><i></i></div>
+<div class="contact"></div>
+
+<!-- FILA INFERIOR -->
+<div class="a info">
+  <div><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>21 · 22 · 23 OCT</b><span>2pm – 5pm</span></div></div>
+  <div><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.7"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b>AUDITORIO</b><span>Fenatrape</span></div></div>
+  <div><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#211a14" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-2 7 5.5-3 5.5 3-2-7"/></svg><div><b>CERTIFICADO</b><span>incluido</span></div></div>
+</div>
+<div class="a logos"><div class="lg">LOGO AIUDA</div><div class="lg">LOGO 321</div><div class="lg">LOGO FENATRAPE</div></div>
+
+<div class="grain"></div>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+{
+ "descripcion": "Reglas de anuncios Meta (Andromeda), diseno vectorial y Higgsfield/Soul extraidas de repos y web. evidence: E=explicito en fuente, I=inferencia. Detalle y enlaces por fuente en BASE_CONOCIMIENTO_ADS.md; texto completo en los 3 informes .md.",
+ "fecha": "2026-10-04",
+ "fuentes": {
+  "github": [
+   "coreyhaines31/marketingskills",
+   "JamieLaunch/meta-algorithm-skill",
+   "myroslavnahirniak/meta-ads-pro",
+   "motion-team/creative-strategy-skills",
+   "adkit/ads-skills",
+   "tenfoldmarc/meta-ads-generator-skill",
+   "creatify-ai/ad-creative-evaluator",
+   "marian-rey/meta-ads-coach",
+   "creativecore-ai/ccai-meta-ads-autopilot",
+   "gquthier/autonomous-ad-creative",
+   "Simo-Dax/claude-code-creative-statics",
+   "tarsluna/skill-0d72a34a2a4d",
+   "AI-ChrisLee/execution-ads-make",
+   "hivijc/higgsfield-ugc-playbook",
+   "charlesdove977/UGC-Factory",
+   "william-zou21/Higgsfield.UGC.Generator",
+   "OSideMedia/higgsfield-ai-prompt-skill",
+   "AKCodez/higgsfield-claude-skills",
+   "nextlevelbuilder/ui-ux-pro-max-skill",
+   "VoltAgent/awesome-design-md",
+   "Leonxlnx/taste-skill",
+   "pbakaus/impeccable",
+   "anthropics/skills"
+  ],
+  "github_base_url": "https://github.com/",
+  "web": [
+   "https://segwise.ai/blog/meta-andromeda-update-creative-strategy-2026",
+   "https://www.excitemedia.com.au/meta-creative-diversification/",
+   "https://houseofmarketers.com/guide-to-safe-zones-tiktok-facebook-instagram-stories-reels/",
+   "https://segwise.ai/blog/100m-meta-ads-5-formats-dtc.md",
+   "https://moda.app/blog/static-ads"
+  ]
+ },
+ "reglas": [
+  {
+   "doc": "meta_ads_reglas",
+   "num": 1,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "El creativo es el targeting: conocer a la audiencia -> creativo primero, filtros despues. Segmentacion amplia (solo pais/ciudad), sin apilar intereses.",
+   "id": "R001"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 2,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Similitud visual/textual >60% = Meta lo trata como un solo anuncio (mismo Entity ID). 20 anuncios casi iguales = 1. Cada creativo debe compartir <40% de rasgos.",
+   "id": "R002"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 3,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Concepto != variacion: cambiar color, titular o fondo NO es concepto nuevo. Un concepto = distinto angulo, formato, persona o escena.",
+   "id": "R003"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 4,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Un conjunto con 10-20 creativos diversos (Heath: minimo ~20 con distintos angulos y etapas de conciencia; \"4 buenos > 20 mediocres\" con poco presupuesto).",
+   "id": "R004"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 5,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Mezclar etapas (no consciente, problema, solucion, producto) en el mismo conjunto; no separar el embudo en campanas.",
+   "id": "R005"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 6,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Estaticos: 10x mas baratos de producir que video; en 2026 suelen igualar o superar video pulido. Volumen y refresco constante.",
+   "id": "R006"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 7,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "No editar anuncios vivos (reinicia aprendizaje); lanzar nuevos. Fatiga: frecuencia >2 por semana en frio es alerta [E JamieLaunch]; >=4 actuar ya [E Heath].",
+   "id": "R007"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 8,
+   "category": "A. Andromeda / algoritmo",
+   "evidence": "E",
+   "rule": "Consolidar: 1 campana, 1-2 conjuntos; no fragmentar con poco presupuesto.",
+   "id": "R008"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 9,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Formato primario 4:5 (1080x1350), segundo 1:1 (1080x1080), tercero 9:16 (1080x1920). Subir versiones nativas de cada una; no depender del recorte automatico.",
+   "id": "R009"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 10,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Mensaje clave en el 80% central; evitar bordes (se recortan).",
+   "id": "R010"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 11,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Zonas seguras: en 4:5 dejar 100px libres arriba y abajo; en 9:16 libres ~250px arriba (15%) y 20% inferior (UI de Reels/Stories); contenido en el 65% central.",
+   "id": "R011"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 12,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Un solo punto focal, sin collages. Un solo angulo y un solo mensaje por anuncio (se penaliza mezclar beneficios).",
+   "id": "R012"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 13,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Gancho en 1-2 segundos / reconocible de un vistazo; debe funcionar antes de leer nada. Texto de gancho 3-7 palabras.",
+   "id": "R013"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 14,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Texto grande, alto contraste, legible en movil (80%+ del trafico). Titular >= ~64px y subtexto >= ~36px en lienzo 1080 de ancho.",
+   "id": "R014"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 15,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Que parezca contenido nativo, no anuncio: formatos tipo Native text overlay, Notes, mensaje de chat, Listicle, Statistic, Review real.",
+   "id": "R015"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 16,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Cara mirando a camara si se usa; prueba social con texto real de resena, no solo \"5 estrellas\". Sin caras IA en rubros delicados [E adkit]; usar foto real del instructor aumenta confianza.",
+   "id": "R016"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 17,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Con texto incrustado: apagar overlays, animacion y \"enhanced media text\" de Meta; dejar ON visual touch-ups, flex media, text improvements.",
+   "id": "R017"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 18,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Una CTA clara (ni cero ni varias); CTA visible como pill/boton en la imagen.",
+   "id": "R018"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 19,
+   "category": "B. Diseno estatico",
+   "evidence": "E",
+   "rule": "Sin em dashes; evitar tipografias genericas (Inter/Roboto/Arial) para no verse \"plantilla\".",
+   "id": "R019"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 20,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Primary text: 125 caracteres visibles antes de \"ver mas\" (hasta 2.200); titular ~27-40 caracteres; descripcion ~30. Todo lo clave arriba.",
+   "id": "R020"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 21,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Copy largo funciona (da contexto al algoritmo) si las primeras 2 lineas enganchan. Formato con vinetas.",
+   "id": "R021"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 22,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Formulas de gancho: numero+prueba, \"Deja de X si quieres Y\", \"La forma facil de X sin Z\", romper creencia, historia personal, \"Si eres [perfil], lee esto\", promesa en tiempo corto. Evitar \"Presentamos\", \"Descubre\", \"Estas buscando\".",
+   "id": "R022"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 23,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Segmentar con el copy: nombrar el perfil (\"Si tienes un negocio...\", \"dueno/gerente\") y una palabra de identidad en titular (hack de una palabra). Escribir con la voz de la audiencia.",
+   "id": "R023"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 24,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Marco PAS (corto) o 5 pasos: audiencia, problema, solucion, quitar 1-2 objeciones, CTA. Objeciones del taller [I]: \"no soy tecnico\", \"no tengo tiempo\", \"ya probe ChatGPT y no sirve\", \"$65 vale la pena?\".",
+   "id": "R024"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 25,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Urgencia/escasez solo reales: fecha limite, cupo numerico, razon del precio de lanzamiento. Nada de falsa urgencia ni estadisticas sin respaldo.",
+   "id": "R025"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 26,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "No afirmar atributos personales (\"Estas fracasado...\") ni clickbait; sin patrones \"IA\": \"No es X, es Y\", listas de negacion, \"Di adios a\", \"Desbloquea el poder\", \"El resultado?\".",
+   "id": "R026"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 27,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "CTA en frio: \"Mas informacion\"/\"Registrarse\"; una oferta, una CTA.",
+   "id": "R027"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 28,
+   "category": "C. Copy",
+   "evidence": "E",
+   "rule": "Especificidad > vaguedad (\"ahorra 5 horas/semana\"), beneficios > funciones, cifras, sin jerga.",
+   "id": "R028"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 29,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Objetivo Leads/registro (no trafico/engagement); optimizar a evento con datos. Presupuesto chico: 1 campana, 1 conjunto, Advantage+ audience, Advantage+ placements (para conversiones). CAPI/Pixel bien.",
+   "id": "R029"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 30,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Orden de pruebas: oferta -> angulo -> formato -> estilo -> gancho -> variables menores (titular, color, CTA). No mezclar rondas. Rondas de ~5 angulos (esperar ~2 buenos).",
+   "id": "R030"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 31,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Umbrales minimos para juzgar: >=1.000 impresiones, >=3 conversiones, >=2 dias; ventana de prueba 7-10 dias; confianza ~90%. Evaluar por costo por lead, no por engagement.",
+   "id": "R031"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 32,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Criterio de corte: CPL ~3x el objetivo con volumen = pausar; cerca del objetivo = dar tiempo. No apagar anuncios de tope de embudo por ROAS aislado; reemplazar por equivalente.",
+   "id": "R032"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 33,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Maximo +20% de presupuesto cada 3-5 dias (o 10-20% cada 48h); no tocar mas de una vez cada 48h; bajar presupuesto en vez de pausar/encender.",
+   "id": "R033"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 34,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Con <50 conversiones/semana: agregar anuncios claramente distintos al mismo conjunto; no hacer rondas multiples de testing. 80/20 o 70/30 (probado/prueba).",
+   "id": "R034"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 35,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Frecuencia sana 1.8-2.8; >3 en 7 dias = fatiga. CTR lead gen mediana 2.59%; CPM LatAm sera distinto [I]: usar tu propio promedio de 28 dias.",
+   "id": "R035"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 36,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "E",
+   "rule": "Ranking: pruebas de enfoque con 3 medios + 2 textos + 1 titular (estandar) o 2+1+1 (<$10/dia).",
+   "id": "R036"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 37,
+   "category": "D. Estructura de pruebas y presupuesto",
+   "evidence": "I",
+   "rule": "Lanzamiento Ecuador: 4-6 conceptos estaticos realmente distintos (dolor, resultado, prueba, curiosidad, identidad, contrarian), cada uno en 4:5 + 9:16 (+1:1 si hay placement feed cuadrado).",
+   "id": "R037"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 1,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Gancho/stop-scroll en <2s (peso x1.5)",
+   "id": "R038"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 2,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Un solo angulo y mensaje claro en 3s (x1.3)",
+   "id": "R039"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 3,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Texto legible en movil: tamano, contraste, poco texto (x1.0)",
+   "id": "R040"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 4,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Encaje con el perfil (dueno/emprendedor/gerente) y llamado de identidad (x1.2)",
+   "id": "R041"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 5,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "CTA unica y visible (x1.3)",
+   "id": "R042"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 6,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Prueba/credibilidad real (cara, resena, cifra verificable) (x1.0)",
+   "id": "R043"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 7,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Seguridad de formato: zona segura 4:5, 9:16 y recorte 1:1 (x1.0)",
+   "id": "R044"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 8,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Diversidad vs. otros anuncios del set (<40% similar) (x1.2)",
+   "id": "R045"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 9,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Honestidad y politicas (sin falsa urgencia, sin atributos personales) (puerta: pasa/no pasa)",
+   "id": "R046"
+  },
+  {
+   "doc": "meta_ads_reglas",
+   "num": 10,
+   "category": "E. Rubrica previa al gasto (0-10 cada una, minimo 7 de promedio)",
+   "evidence": "",
+   "rule": "Coherencia anuncio-landing/formulario (misma promesa y precio $65) (x1.0)",
+   "id": "R047"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 1,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "E",
+   "rule": "Una idea, una frase, un foco. Texto en imagen: 6-8 palabras en el titular; el resto va en el copy de Meta [E]. Bloques grandes de texto reducen alcance [E].",
+   "id": "R048"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 2,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Zonas seguras 9:16 (1080x1920): dejar libres ~250 px arriba y ~340 px abajo [E]. En 4:5 (1080x1350): margen 84 px lateral, 96 px arriba/abajo [I].",
+   "id": "R049"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 3,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Escala tipografica en 1080 (ratio ~1.5) [I]: titular 120-170 px (max 3 lineas); subtitular 52-64; cuerpo/chips 36-44; microtexto minimo 30 (legible en celular). Interlineado titular 0.95-1.05; tracking -2% a -3% en display; mayusculas con +6% tracking.",
+   "id": "R050"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 4,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Pares de Google Fonts [I]: (a) Bricolage Grotesque 800 + Inter Tight/DM Sans; (b) Fraunces (display serif) + Manrope; (c) Anton/Bebas Neue + Work Sans (cartel); (d) Space Grotesk + IBM Plex Sans; (e) Instrument Serif + Geist/Figtree. Maximo 2 familias; el contraste viene de peso y escala. Evitar Inter/Arial por defecto [E].",
+   "id": "R051"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 5,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Color 60-30-10 [I]: 60% fondo (oscuro tintado tipo #0B0F1A o claro calido), 30% secundario/formas, 10% acento unico para CTA y una palabra clave. Nunca #000/#FFF/gris puro; tintar hacia el matiz de marca [E]. Contraste texto >= 4.5:1, titulares >= 7:1 [E/I].",
+   "id": "R052"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 6,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "E",
+   "rule": "Gasta la audacia en un solo lugar [E]: un elemento enorme (numero, palabra, forma); el resto calla.",
+   "id": "R053"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 7,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "",
+   "rule": "Asimetria intencional y cuadricula de 8 px (columnas 12, alineacion a la izquierda) en vez de todo centrado [E taste-skill].",
+   "id": "R054"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 8,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Profundidad solo con CSS/SVG [I]:",
+   "id": "R055"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 9,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "E",
+   "rule": "Sin clises IA [E]: sin crema+serif+terracota, sin morado-azul, sin eyebrow en mayusculas sobre todo, sin cards identicas anidadas, sin \"01/02/03\" decorativo, sin flechas por todas partes, sin \"palabra en cursiva/color\" en cada titular.",
+   "id": "R056"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 10,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "",
+   "rule": "Un CTA visible (boton/pildora con acento) + dato de oferta (fecha, precio, cupo) legible; logo pequeno en esquina.",
+   "id": "R057"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 11,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "I",
+   "rule": "Nada se corta, nada se superpone sin intencion [E canvas-design]. Verifica con captura a 375 px de ancho (se ve en celular) [I].",
+   "id": "R058"
+  },
+  {
+   "doc": "diseno_vectorial_reglas",
+   "num": 12,
+   "category": "(b) Rulebook (anuncio vectorial \"caro\")",
+   "evidence": "E",
+   "rule": "Andromeda [E]: 8-12 conceptos realmente distintos por campana, 2-3 variaciones cada uno; creativos similares se colapsan en un mismo Entity ID (similitud >60% = supresion; apuntar a <40%). Cambiar solo el titular sobre la misma plantilla NO cuenta. Mezclar \"pulido de marca\" con \"nativo/crudo\" [E].",
+   "id": "R059"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 1,
+   "category": "2.1 Formatos nativos (no parecen anuncio)",
+   "evidence": "E",
+   "rule": "Los formatos \"no parecen anuncio\" rinden mejor en tráfico frío: conversación iMessage, tweet/X, Nota de iOS, post nativo FB/IG, selfie UGC \"ligeramente imperfecta, NO estudio\", testimonio, listicle, dato único grande, flat-lay.",
+   "id": "R060"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 2,
+   "category": "2.1 Formatos nativos (no parecen anuncio)",
+   "evidence": "E",
+   "rule": "Plantilla Notas: \"A realistic iOS NOTES APP screenshot, authentic and low-fi, white note background with the iOS Notes top bar\", título + 4 viñetas. WhatsApp/iMessage: 2 o 3 intercambios entre pares. Tweet: avatar redondo, nombre, @handle, métricas.",
+   "id": "R061"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 3,
+   "category": "2.1 Formatos nativos (no parecen anuncio)",
+   "evidence": "E",
+   "rule": "Mezcla recomendada: 2-3 nativos, 1-2 UGC, 1-2 de valor (dato/listicle/flat-lay), 1 carrusel, 1 interruptor de patrón.",
+   "id": "R062"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 4,
+   "category": "2.1 Formatos nativos (no parecen anuncio)",
+   "evidence": "I",
+   "rule": "Para nosotros, los formatos de \"pantalla\" (Notas, WhatsApp, tweet) se hacen mejor en HTML/CSS determinista (texto exacto en español, tildes, ñ) y Soul solo aporta la FOTO del ponente (avatar del tweet, foto adjunta). Los de foto (candid iPhone, editorial, detrás de cámaras, historia con caption) = Soul genera escena completa y el texto va después.",
+   "id": "R063"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 5,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "E",
+   "rule": "Soul 2.0: describir sujeto + escena + mood; el estilo se aplica con `style_id` (10 presets), no con texto. `style_id` no se combina con `image_references` (máx. 1 referencia). Parámetros: `soul_id`, `quality`, paletas Color Transfer.",
+   "id": "R064"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 6,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "E",
+   "rule": "Soul Cinema: \"los fotogramas más cinematográficos\", texturas ricas, composiciones naturales, grano de película, excelente en close-ups; solo prompt, sin panel de presets; `quality` 1.5k/2k, Soul HEX para controlar color desde una foto de referencia.",
+   "id": "R065"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 7,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "E",
+   "rule": "Anti plástico: \"no 3D, natural skin texture, 35mm film grain\"; luz imperfecta; evitar color hiperlimpio.",
+   "id": "R066"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 8,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "I",
+   "rule": "Plantilla sugerida: \"Candid photo shot on iPhone 15 Pro, 24mm main lens, handheld, slightly off-center framing, natural window light mixed with warm practical lamp, mild noise and 35mm film grain, natural skin texture with pores and small imperfections, no retouching, eyes looking at a person off-camera (NOT at lens), [wardrobe], [real location: coworking/cafe/aula], shallow but realistic depth of field, muted slightly warm color, no text, no logos, no watermark\". Mirada: fuera de cámara o hacia lo que hace (nada de señalar a cámara).",
+   "id": "R067"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 9,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "I",
+   "rule": "Escena completa en una sola pasada (fondo, luz, ropa en el prompt): evita recortes y parches; es consistente con nuestra regla de no compositing.",
+   "id": "R068"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 10,
+   "category": "2.2 Cómo promptear Soul para que la persona se vea real",
+   "evidence": "I",
+   "rule": "Usar encuadre con aire: pedir \"subject placed in the lower third / left third, large clean area of plain wall / out-of-focus background in the upper X% / right side\".",
+   "id": "R069"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 11,
+   "category": "2.3 Mantener la cara (likeness)",
+   "evidence": "E",
+   "rule": "Pasar siempre `soul_id`; si la cara se desvía, bajar/quitar style presets (hivijc).",
+   "id": "R070"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 12,
+   "category": "2.3 Mantener la cara (likeness)",
+   "evidence": "E",
+   "rule": "Nano Banana 2 tiene \"la mejor coincidencia facial de la plataforma\" y es el que mejor conserva imágenes de entrada para correcciones pequeñas de una línea; para ediciones, enmascarar la región modificada sobre el original.",
+   "id": "R071"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 13,
+   "category": "2.3 Mantener la cara (likeness)",
+   "evidence": "E",
+   "rule": "Nombrar el rol de cada referencia en el prompt (\"Image A pose, Image B style...\").",
+   "id": "R072"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 14,
+   "category": "2.3 Mantener la cara (likeness)",
+   "evidence": "I",
+   "rule": "Mantener 1 sola referencia extra como máximo con Soul 2.0; usar `quality` alto en la versión final y borradores en baja; no combinar `style_id` con referencias.",
+   "id": "R073"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 15,
+   "category": "2.4 Texto: determinista vs en el modelo",
+   "evidence": "E",
+   "rule": "Simo-Dax: HTML/CSS por defecto; generar solo la imagen sin texto/logo/CTA y componer; \"casi siempre gana cuando el copy importa\". gquthier/tarsluna hacen lo contrario (texto dentro de GPT Image 2) y piden verificar defectos de render.",
+   "id": "R074"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 16,
+   "category": "2.4 Texto: determinista vs en el modelo",
+   "evidence": "E",
+   "rule": "Texto en modelo solo con GPT Image 2/Nano Banana; \"Readable UI\" con otros modelos sale ilegible (hivijc).",
+   "id": "R075"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 17,
+   "category": "2.4 Texto: determinista vs en el modelo",
+   "evidence": "I",
+   "rule": "Nuestra decisión: determinista (HTML + Playwright). Ventaja: ortografía exacta, tildes, ñ, em dash prohibido, cero reintentos.",
+   "id": "R076"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 18,
+   "category": "2.4 Texto: determinista vs en el modelo",
+   "evidence": "E",
+   "rule": "Zonas seguras Meta 1080x1350: 100 px libres arriba/abajo (tenfoldmarc). GPT Image 2 no soporta 4:5, usar 3:4 [E]; con Soul/NB2 4:5 sí está disponible [E NB2].",
+   "id": "R077"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 19,
+   "category": "2.5 Diversidad (Andromeda)",
+   "evidence": "E",
+   "rule": "3-3-2-2: 3 duplican ganadores, 3 inspirados en competencia, 2 pilares nuevos, 2 wildcards; matriz de variación: una variable por celda (hook, formato, estilo visual, prueba, color); \"diversidad sobre volumen\".",
+   "id": "R078"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 20,
+   "category": "2.5 Diversidad (Andromeda)",
+   "evidence": "I",
+   "rule": "Andromeda agrupa creativos parecidos; variar escena, encuadre, paleta, formato y ángulo del hook, no solo el texto.",
+   "id": "R079"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 21,
+   "category": "2.6 Hooks",
+   "evidence": "E",
+   "rule": "3-7 palabras en pantalla (tenfoldmarc); hook valida \"reconocimiento de audiencia\" (tarsluna); CTA clara; primary text ~90 caracteres, headline 30.",
+   "id": "R080"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 22,
+   "category": "2.6 Hooks",
+   "evidence": "E",
+   "rule": "Clonar la forma de anuncios ganadores de Meta Ad Library, no las palabras (execution-ads-make).",
+   "id": "R081"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 23,
+   "category": "2.6 Hooks",
+   "evidence": "I",
+   "rule": "Patrones: llamado a la audiencia (\"Taller de IA para emprendedores\"), especificidad (\"Aprende a pedirle bien a ChatGPT, sin tecnicismos\"), curiosidad (\"Lo que tu negocio no le está preguntando a la IA\"), fecha/lugar/cupo reales. Solo cifras reales del negocio.",
+   "id": "R082"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 24,
+   "category": "2.7 Qué NO hacer",
+   "evidence": "E",
+   "rule": "Sin em dashes; sin degradados morado sobre blanco; sin fuentes genéricas (Inter/Roboto/Arial); sin estadísticas inventadas; sin 10 creativos iguales; sin matar anuncios antes del umbral.",
+   "id": "R083"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 25,
+   "category": "2.7 Qué NO hacer",
+   "evidence": "E",
+   "rule": "Sin 3D/piel suavizada/color hipergradeado.",
+   "id": "R084"
+  },
+  {
+   "doc": "higgsfield_meta_ads_nativo",
+   "num": 26,
+   "category": "2.7 Qué NO hacer",
+   "evidence": "I",
+   "rule": "Sin look stock (sonrisa a cámara, brazos cruzados, oficina vidriada), sin señalar a cámara, sin banners con CTA pesado, sin logos pegados encima del rostro, sin texto dentro de la foto Soul.",
+   "id": "R085"
+  }
+ ]
+}
